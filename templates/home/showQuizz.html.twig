@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="BootstrapStudio/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+    <link rel="stylesheet" href="BootstrapStudio/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="BootstrapStudio/bootstrap/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block body %}
+
+<header class="masthead" style="background-image:url('BootstrapStudio/img/intro-bg.jpg');">
+    <div class="intro-body" style="background-image: url('BootstrapStudio/img/14358.jpg');filter: blur(0px);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input id="search-user" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button  class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                    <button class="btn btn-primary goToQuizz" type="button">LANCER le quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<script>
+    // alert('zob');
+    $(document).ready(function(){
+        $('#search-user').keyup(function(){
+            // alert('lalala');
+            $('#result-search').html('');
+
+            var nom = $(this).val();
+
+            if(nom != ""){
+                // alert('hop');
+                /*$.ajax({
+                    type: 'GET',
+                    url: 'https://www.superheroapi.com/api/907407582990145/search/',
+                    data: 'name=' + nom,
+                    success: function(data){
+                        alert('succes');
+                        if(data != ""){
+                            $('#result-search').append(data);
+                        }else{
+                            document.getElementById('result-search').innerHTML = "<div style='font-size: 20px; text-align: center; margin-top: 10px'>Aucun nom</div>"
+                        }
+                    }
+                });*/
+
+            }
+        });
+    });
+</script>
+
+    $.ajax({
+    type: 'POST',
+    crossDomain: true,
+    dataType: 'jsonp',
+    url: '',
+    success: function(jsondata){
+
+    }
+    })
+
+
+
+{% endblock %}
