@@ -1,0 +1,16 @@
+.navbar.navbar-light.navbar-expand-md {
+}
+
+.loginForm ,.registerForm{
+    margin-top: 300px;
+    height: 400px;
+}
+
+.registerForm{
+    /*background-image: url('BootstrapStudio/img/login.jpg');*/
+    margin-left: 40%;
+    font-family:Quicksand, sans-serif;
+    background-color:rgba(44,40,52,0.73);
+    width:320px;
+    padding:40px;
+}
