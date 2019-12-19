@@ -1,3 +1,5 @@
+{% extends 'base.html.twig' %}
+
 {% block body %}
-<h1>Bonjour {{ content.name }}</h1>
+<h1>Bonjour {{ content.biography['full-name'] }}</h1>
 {% endblock %}
