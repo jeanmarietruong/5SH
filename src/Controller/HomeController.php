@@ -31,6 +31,7 @@ class HomeController extends AbstractController
      */
     public function showQuizz()
     {
+        return $this->render('quiz/quiz.html.twig');
         /*$names = [];
         $client = HttpClient::create();
         for($i=1;$i<=50;$i++) {
@@ -47,8 +48,5 @@ class HomeController extends AbstractController
 
         var_dump($names);
         exit();*/
-
-
-        return $this->render('home/showQuizz.html.twig');
     }
 }
