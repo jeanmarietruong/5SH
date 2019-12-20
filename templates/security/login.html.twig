@@ -22,7 +22,7 @@
 
         {% if app.user %}
             <div class="mb-3">
-                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                Connecter en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
             </div>
         {% endif %}
 
@@ -40,12 +40,12 @@
 
             <div class="checkbox mb-3">
                 <label>
-                    <input type="checkbox" name="_remember_me"> Remember me
+                    <input type="checkbox" name="_remember_me"> Se souvenir de moi
                 </label>
             </div>
 
         <button class="btn btn-lg btn-light btn-primary" type="submit">
-            Sign in
+            Connexion
         </button>
     </form>
     <script src="BootstrapStudio/bootstrap/js/jquery.min.js"></script>
