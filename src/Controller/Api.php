@@ -35,11 +35,11 @@ class Api extends AbstractController
         ]);
     }
 
-    /**
-     * @Route({
-     *     "fr": "/Quizz/{idHero}",
-     * }, name="Quizz_Hero")
-     */
+//    /**
+//     * @Route({
+//     *     "fr": "/Quizz/{idHero}",
+//     * }, name="show_quizz")
+//     */
 
     public function quizz(int $idHero) {
         $client = HttpClient::create();
@@ -65,11 +65,9 @@ class Api extends AbstractController
             ];
         }
         $reponserandom = $this->random(2, $question);
-//        var_dump($reponserandom);
-        return $this->render('quizz/quizz.html.twig',
-            [
+        return [
                 'hero' => $hero, 'reponse' => $question, 'faux' => $reponserandom
-            ]);
+            ];
     }
 
     public function random(int $quantiter, array $question) {
@@ -99,13 +97,10 @@ class Api extends AbstractController
                         9 => $hero['biography']['first-appearance']
                     ];
                     $faux[$u] = $recherche[$u];
-
                 }
             }
             $reponse[$i] = $faux;
-
         }
-
         $result = [
             array_intersect_assoc($reponse[0], $question[0]),
             array_intersect_assoc($reponse[0], $reponse[1]),
@@ -167,17 +162,12 @@ class Api extends AbstractController
                 array_intersect_assoc($reponse[2], $reponse[0])
             ];
 
-            if (empty($result[0]) and empty($result[1]) and empty($result[2]) and empty($result[3]) and empty($result[4]) and empty($result[5])){
+            if (empty($result[0]) and empty($result[1]) and empty($result[2]) and empty($result[3]) and empty($result[4]) and empty($result[5])) {
                 $alert = 'true';
             } else {
                 $alert = 'false';
             }
-            var_dump($result);
         }
-
-//        var_dump($result);
-
-
         return $reponse;
     }
 }

@@ -13,87 +13,88 @@ const progress = document.getElementById("progress");
 const scoreDiv = document.getElementById("scoreContainer");
 
 // create our questions
+
 let questions = [
     {
         question : "Quel est son prénom ?",
-        imgSrc : "BootstrapStudio/img/Logo12.png",
-        choiceA : "Correct",
-        choiceB : "Wrong",
-        choiceC : "Wrong",
-        choiceD : "Wrong",
+        imgSrc : image['url'],
+        choiceA : juste[0],
+        choiceB : faux[0][0],
+        choiceC : faux[1][0],
+        choiceD : faux[2][0],
         correct : "A"
     },{
         question : "Ou est-il née?",
-        imgSrc : "BootstrapStudio/img/Logo12.png",
-        choiceA : "Wrong",
-        choiceB : "Correct",
-        choiceC : "Wrong",
-        choiceD : "Wrong",
+        imgSrc : image['url'],
+        choiceA : faux[0][1],
+        choiceB : juste[1],
+        choiceC : faux[1][1],
+        choiceD : faux[2][1],
         correct : "B"
     },{
         question : "De quel race est-il?",
-        imgSrc : "BootstrapStudio/img/Logo12.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        choiceD : "Wrong",
-        correct : "C"
+        imgSrc : image['url'],
+        choiceA : faux[0][2],
+        choiceB : faux[1][2],
+        choiceC : faux[2][2],
+        choiceD : juste[2],
+        correct : "D"
     },{
         question : "Quel est son alias?",
-        imgSrc : "BootstrapStudio/img/Logo12.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        choiceD : "Wrong",
-        correct : "C"
+        imgSrc : image['url'],
+        choiceA : faux[0][3],
+        choiceB : faux[1][3],
+        choiceC : faux[2][3],
+        choiceD : juste[3],
+        correct : "D"
     },{
         question : "Qui est son éditeur?",
-        imgSrc : "BootstrapStudio/img/Logo12.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        choiceD : "Wrong",
+        imgSrc : image['url'],
+        choiceA : faux[0][4],
+        choiceB : faux[1][4],
+        choiceC : juste[4],
+        choiceD : faux[2][4],
         correct : "C"
     },{
         question : "Quelle est son occupation?",
-        imgSrc : "BootstrapStudio/img/Logo12.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        choiceD : "Wrong",
-        correct : "C"
+        imgSrc : image['url'],
+        choiceA : juste[5],
+        choiceB : faux[0][5],
+        choiceC : faux[1][5],
+        choiceD : faux[2][5],
+        correct : "A"
     },{
         question : "Quelle est son groupe d'affiliation?",
-        imgSrc : "BootstrapStudio/img/Logo12.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        choiceD : "Wrong",
+        imgSrc : image['url'],
+        choiceA : faux[0][6],
+        choiceB : faux[1][6],
+        choiceC : juste[6],
+        choiceD : faux[2][6],
         correct : "C"
     },{
         question : "Parmis tous ses prénoms, avec qui l'héros à un lien de parenté?",
-        imgSrc : "BootstrapStudio/img/Logo12.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        choiceD : "Wrong",
-        correct : "C"
+        imgSrc : image['url'],
+        choiceA : faux[0][7],
+        choiceB : juste[7],
+        choiceC : faux[1][7],
+        choiceD : faux[2][7],
+        correct : "B"
     },{
         question : "Ou est situé sa base?",
-        imgSrc : "BootstrapStudio/img/Logo12.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        choiceD : "Wrong",
+        imgSrc : image['url'],
+        choiceA : faux[0][8],
+        choiceB : faux[1][8],
+        choiceC : juste[8],
+        choiceD : faux[2][8],
         correct : "C"
     },{
         question : "Dans quel scène a t-il était vue pour la première fois?",
-        imgSrc : "BootstrapStudio/img/Logo12.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        choiceD : "Wrong",
-        correct : "C"
+        imgSrc : image['url'],
+        choiceA : faux[0][9],
+        choiceB : faux[1][9],
+        choiceC : faux[2][9],
+        choiceD : juste[9],
+        correct : "D"
     }
 ];
 
@@ -102,7 +103,7 @@ let questions = [
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let count = 0;
-const questionTime = 11; // 10s
+const questionTime = 30; // 10s
 const gaugeWidth = 150; // 150px
 const gaugeUnit = gaugeWidth / questionTime;
 let TIMER;
@@ -203,15 +204,64 @@ function scoreRender(){
     const scorePerCent = Math.round(100 * score/questions.length);
     
     // choose the image based on the scorePerCent
-    let img = (scorePerCent >= 80) ? "BootstrapStudio/img/5.png" :
-              (scorePerCent >= 60) ? "BootstrapStudio/img/4.png" :
-              (scorePerCent >= 40) ? "BootstrapStudio/img/3.png" :
-              (scorePerCent >= 20) ? "BootstrapStudio/img/2.png" :
-              "BootstrapStudio/img/1.png";
+    let img = (scorePerCent >= 80) ? "/BootstrapStudio/img/5.png" :
+              (scorePerCent >= 60) ? "/BootstrapStudio/img/4.png" :
+              (scorePerCent >= 40) ? "/BootstrapStudio/img/3.png" :
+              (scorePerCent >= 20) ? "/BootstrapStudio/img/2.png" :
+              "/BootstrapStudio/img/1.png";
     
     scoreDiv.innerHTML = "<img src="+ img +">";
     scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";
+    scoreDiv.innerHTML += "<button type='submit'>Retour</button>";
 }
+
+
+$(document).ready(function() {
+    //A l'écoute du bouton ADD accueil
+    $('#form').submit(function (evt) {
+        evt.preventDefault();
+        let question1 = document.getElementById('0').getAttribute('style');
+        let question2 = document.getElementById('1').getAttribute('style');
+        let question3 = document.getElementById('2').getAttribute('style');
+        let question4 = document.getElementById('3').getAttribute('style');
+        let question5 = document.getElementById('4').getAttribute('style');
+        let question6 = document.getElementById('5').getAttribute('style');
+        let question7 = document.getElementById('6').getAttribute('style');
+        let question8 = document.getElementById('7').getAttribute('style');
+        let question9 = document.getElementById('8').getAttribute('style');
+        let question10 = document.getElementById('9').getAttribute('style');
+
+        $.ajax('/SendQuizz.php', {
+            method: 'POST',
+            data: {
+                question1: question1,
+                question2: question2,
+                question3: question3,
+                question4: question4,
+                question5: question5,
+                question6: question6,
+                question7: question7,
+                question8: question8,
+                question9: question9,
+                question10: question10,
+            }
+        })
+            .then(
+                function success() {
+                    $('#resultat').append('<div class="alert alert-success">Votre demande de devis a bien été transmis  ' +
+                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close">\n' +
+                        '    <span aria-hidden="true">&times;</span>\n' +
+                        '  </button></div>');
+                },
+                function fail() {
+                    $('#resultat').append('<div class="alert alert-danger">Votre demande de devis n\'a pas été transmis ' +
+                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close">\n' +
+                        '    <span aria-hidden="true">&times;</span>\n' +
+                        '  </button></div>');
+                }
+            );
+    });
+});
 
 
 
