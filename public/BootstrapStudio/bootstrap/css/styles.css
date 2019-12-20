@@ -27,14 +27,14 @@
 .navButton {
     background-color: rgba(255,15,0,0.298);
     opacity: 1;
-    width: 180px;
+    width: 200px;
     text-align: center;
 }
 
 .navButtonP {
     background-color: rgba(0,15,255,0.298);
     opacity: 1;
-    width: 180px;
+    width: 200px;
     text-align: center;
 }
 
