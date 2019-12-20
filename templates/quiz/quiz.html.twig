@@ -12,9 +12,14 @@
     <title>Quiz</title>
     </head>
 <div id="container">
+{#    <form id='form'><button type='submit'>Sauvegarder</button></form>#}
+    <div id="resultat"></div>
     <div id="start">Start Quiz!</div>
     <div id="quiz" style="display: none">
-        <div id="question"></div>
+        <div>
+            <h1 style="text-align: center">{{ content.hero['name'] }}</h1>
+            <div id="question"></div>
+        </div>
         <div id="qImg"></div>
         <div id="choices">
             <div class="choice" id="A" onclick="checkAnswer('A')"><p></p></div>
