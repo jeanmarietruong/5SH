@@ -17,7 +17,7 @@
         <div id="question"></div>
         <div id="qImg"></div>
         <div id="choices">
-            <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+            <div class="choice" id="A" onclick="checkAnswer('A')"><p></p></div>
             <div class="choice" id="B" onclick="checkAnswer('B')"></div>
             <div class="choice" id="C" onclick="checkAnswer('C')"></div>
             <div class="choice" id="D" onclick="checkAnswer('D')"></div>
@@ -32,5 +32,14 @@
     <div id="scoreContainer" style="display: none"></div>
 </div>
 
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        let juste = {{ content.reponse[0]|json_encode|raw }};
+        let faux = {{ content.faux|json_encode|raw }};
+        let image = {{ content.hero['image']|json_encode|raw }}
+    </script>
+    <script src="/BootstrapStudio/js/quiz.js"></script>
 {% endblock %}
 

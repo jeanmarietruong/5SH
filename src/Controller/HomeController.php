@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Quizz;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,7 +16,11 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->render('home/index.html.twig');
+        $id = rand(1, 732);
+        return $this->render('home/index.html.twig',
+            [
+                'id' => $id
+            ]);
     }
 
     /**
@@ -23,30 +28,21 @@ class HomeController extends AbstractController
      */
     public function profilAccess()
     {
+
         return $this->render('home/profil.html.twig');
     }
 
     /**
-     * @Route("/Quizzs", name="show_quizz")
+     * @Route("/Quizzs/{id}", name="show_quizz")
      */
-    public function showQuizz()
+    public function showQuizz(int $id)
     {
-        return $this->render('quiz/quiz.html.twig');
-        /*$names = [];
-        $client = HttpClient::create();
-        for($i=1;$i<=50;$i++) {
-            $response = $client->request('GET', self::LINK.$i.'/image');
-            $statusCode = $response->getStatusCode();
+        $api = new Api();
+        $content = $api->quizz($id);
+        return $this->render('quiz/quiz.html.twig',
+            [
+                'content' => $content
+            ]);
 
-            if ($statusCode === 200) {
-//                $content = $response->getContent();
-                $names[] = $response->toArray();
-
-//                $content = $response->toArray();
-            }
-        }
-
-        var_dump($names);
-        exit();*/
     }
 }
