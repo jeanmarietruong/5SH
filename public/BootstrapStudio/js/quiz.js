@@ -16,7 +16,7 @@ const scoreDiv = document.getElementById("scoreContainer");
 
 let questions = [
     {
-        question : "Quel est son prénom ?",
+        question : "Quel est son nom complet ?",
         imgSrc : image['url'],
         choiceA : juste[0],
         choiceB : faux[0][0],
@@ -24,7 +24,7 @@ let questions = [
         choiceD : faux[2][0],
         correct : "A"
     },{
-        question : "Ou est-il née?",
+        question : "Où est-il né?",
         imgSrc : image['url'],
         choiceA : faux[0][1],
         choiceB : juste[1],
@@ -32,7 +32,7 @@ let questions = [
         choiceD : faux[2][1],
         correct : "B"
     },{
-        question : "De quel race est-il?",
+        question : "De quelle race est-il?",
         imgSrc : image['url'],
         choiceA : faux[0][2],
         choiceB : faux[1][2],
@@ -48,7 +48,7 @@ let questions = [
         choiceD : juste[3],
         correct : "D"
     },{
-        question : "Qui est son éditeur?",
+        question : "Quel est son éditeur?",
         imgSrc : image['url'],
         choiceA : faux[0][4],
         choiceB : faux[1][4],
@@ -64,7 +64,7 @@ let questions = [
         choiceD : faux[2][5],
         correct : "A"
     },{
-        question : "Quelle est son groupe d'affiliation?",
+        question : "Quel est son groupe d'affiliation?",
         imgSrc : image['url'],
         choiceA : faux[0][6],
         choiceB : faux[1][6],
@@ -72,7 +72,7 @@ let questions = [
         choiceD : faux[2][6],
         correct : "C"
     },{
-        question : "Parmis tous ses prénoms, avec qui l'héros à un lien de parenté?",
+        question : "Parmis tous ses prénoms, avec qui le héros à t'il un lien de parenté?",
         imgSrc : image['url'],
         choiceA : faux[0][7],
         choiceB : juste[7],
@@ -80,7 +80,7 @@ let questions = [
         choiceD : faux[2][7],
         correct : "B"
     },{
-        question : "Ou est situé sa base?",
+        question : "Où est situé sa base?",
         imgSrc : image['url'],
         choiceA : faux[0][8],
         choiceB : faux[1][8],
@@ -88,7 +88,7 @@ let questions = [
         choiceD : faux[2][8],
         correct : "C"
     },{
-        question : "Dans quel scène a t-il était vue pour la première fois?",
+        question : "Dans quelle scène a t-il été vu pour la première fois?",
         imgSrc : image['url'],
         choiceA : faux[0][9],
         choiceB : faux[1][9],
@@ -212,11 +212,17 @@ function scoreRender(){
     
     scoreDiv.innerHTML = "<img src="+ img +">";
     scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";
-    scoreDiv.innerHTML += "<button type='submit'>Retour</button>";
+    scoreDiv.innerHTML += "<button type='submit'><a href='/'>Retour</a></button>";
 }
 
 
+document.getElementById("form").addEventListener("submit", function(evt){
+    evt.preventDefault();
+    document.getElementById("resultat").innerHTML = "Hello World";
+});
+/*
 $(document).ready(function() {
+    console.log('test');
     //A l'écoute du bouton ADD accueil
     $('#form').submit(function (evt) {
         evt.preventDefault();
@@ -261,7 +267,7 @@ $(document).ready(function() {
                 }
             );
     });
-});
+});*/
 
 
 
