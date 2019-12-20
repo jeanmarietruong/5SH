@@ -3,10 +3,6 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-</br>
-</br>
-</br>
-</br>
 
 <header class="masthead" style="background-image:url('BootstrapStudio/img/intro-bg.jpg');">
     <div class="intro-body" style="background-image: url('BootstrapStudio/img/14358.jpg');filter: blur(0px);">
@@ -14,7 +10,10 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <h1 class="brand-heading">heroes quiz</h1>
-                    <p class="intro-text" style="filter: brightness(100%);font-size: 23;"><strong>CONNAISSEZ-VOUS RÉELLEMENT VOS SUPER-HÉROS PRÉFÉRÉS ?</strong></p><button class="btn btn-primary goToQuizz" type="button"><a href="/Quizzs/{{ id }}">LANCER UN QUIZZ ALÉATOIRE</a></button></div>
+                    <p class="intro-text" style="filter: brightness(100%);font-size: 23;"><strong>CONNAISSEZ-VOUS RÉELLEMENT VOS SUPER-HÉROS PRÉFÉRÉS ?</strong>
+                        {% if app.user %}
+                    </p><button class="btn btn-primary goToQuizz" type="button"><a href="/Quizzs/{{ id }}">LANCER UN QUIZZ ALÉATOIRE</a></button></div>
+                        {% endif %}
             </div>
         </div>
     </div>
