@@ -21,7 +21,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SendQuizz extends  AbstractController
 {
     /**
-     * @Route("/sendquizz", name="app_register")
+     * @Route("/sendquizz", name="send")
      */
     public function send(Request $request, User $user)
     {
